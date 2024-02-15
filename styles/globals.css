@@ -1,0 +1,441 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Note: The styles for this gradient grid background is heavily inspired by the creator of this amazing site (https://dub.sh) – all credits go to them!
+*/
+
+.anounce-container .anounce-title{
+  text-align: center;
+}
+
+body {
+  font-family: "Fira Sans", Helvetica, Arial, sans-serif;
+}
+
+.form-container{
+  position: relative;
+  min-height: 100vh;
+  background-color: #E1E8EE;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Fira Sans", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/*.outline_btn {
+  @apply rounded-full border border-black bg-transparent py-1.5 px-5 text-black transition-all hover:bg-black hover:text-white text-center text-sm font-inter flex items-center justify-center;
+}*/
+
+
+
+.nav {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+	flex-direction: row;
+	flex-wrap: wrap;
+
+  .links {
+    height: 100%;
+  }
+
+  .outline_btn {
+    height: 100%;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 10px;
+    text-transform: uppercase;
+    color: #000;
+    text-decoration: none;
+
+    &:active,
+    &:hover {
+      color: #9189eb;
+    }
+  }
+}
+
+
+
+
+
+.form-structor {
+  background-color: #222;
+  border-radius: 15px;
+  height: 550px;
+  width: 350px;
+  position: relative;
+  overflow: hidden;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: 730px ;
+}
+.form-structor::after {
+  content: "";
+  opacity: 0.8;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.form-structor .signup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  width: 65%;
+  z-index: 5;
+  -webkit-transition: all 0.3s ease;
+}
+.form-structor .signup.slide-up {
+  top: 5%;
+  -webkit-transform: translate(-50%, 0%);
+  -webkit-transition: all 0.3s ease;
+}
+.form-structor .signup.slide-up .form-holder, .form-structor .signup.slide-up .submit-btn {
+  opacity: 0;
+  visibility: hidden;
+}
+.form-structor .signup.slide-up .form-title {
+  font-size: 1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.form-structor .signup.slide-up .form-title span {
+  margin-right: 5px;
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3s ease;
+}
+.form-structor .signup .form-title {
+  color: #fff;
+  font-size: 1.7em;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+.form-structor .signup .form-title span {
+  color: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+.form-structor .signup .form-holder {
+  border-radius: 15px;
+  background-color: #fff;
+  overflow: hidden;
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3s ease;
+}
+.form-structor .signup .form-holder .input {
+  border: 0;
+  outline: none;
+  box-shadow: none;
+  display: block;
+
+  line-height: 30px;
+  padding: 8px 15px;
+  border-bottom: 1px solid #eee;
+  width: 100%;
+  font-size: 12px;
+}
+
+.password-control {
+  top: 63%;
+	right: -6%;
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+}
+
+.password-control.psw-eye-login {
+  top: 56.5%;
+}
+
+.form-structor .signup .form-holder .input:last-child {
+  border-bottom: 0;
+}
+.form-structor .signup .form-holder .input::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+.form-structor .signup .submit-btn {
+  background-color: rgba(231 231 231 / 79%);
+  color: rgba(0 0 0 / 70%);
+  border: 0;
+  border-radius: 15px;
+  display: block;
+  margin: 15px auto;
+  padding: 15px 45px;
+  width: 100%;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: all 0.3s ease;
+}
+.form-structor .signup .submit-btn:hover {
+  transition: all 0.3s ease;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.error-holder{
+  font-size: 15px;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-error-holder{
+  height: inherit;
+  text-align: center;
+}
+
+.form-structor .login {
+  position: absolute;
+  top: 20%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  z-index: 5;
+  -webkit-transition: all 0.3s ease;
+}
+.form-structor .login::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -20px;
+  -webkit-transform: translate(-50%, 0);
+  background-color: #fff;
+  width: 200%;
+  height: 250px;
+  border-radius: 50%;
+  z-index: 4;
+  -webkit-transition: all 0.3s ease;
+}
+.form-structor .login .center {
+  position: absolute;
+  top: calc(50% - 10%);
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  width: 65%;
+  z-index: 5;
+  -webkit-transition: all 0.3s ease;
+}
+.form-structor .login .center .form-title {
+  color: #000;
+  font-size: 1.7em;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+.form-structor .login .center .form-title span {
+  color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.3s ease;
+}
+.form-structor .login .center .form-holder {
+  border-radius: 15px;
+  background-color: #fff;
+  border: 1px solid #eee;
+  overflow: hidden;
+  margin-top: 50px;
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: all 0.3s ease;
+}
+.form-structor .login .center .form-holder .input {
+  border: 0;
+  outline: none;
+  box-shadow: none;
+  display: block;
+  line-height: 30px;
+  padding: 8px 15px;
+  border-bottom: 1px solid #eee;
+  width: 100%;
+  font-size: 12px;
+}
+.form-structor .login .center .form-holder .input:last-child {
+  border-bottom: 0;
+}
+.form-structor .login .center .form-holder .input::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+.form-structor .login .center .submit-btn {
+  background-color: #6B92A4;
+  color: rgba(255, 255, 255, 0.7);
+  border: 0;
+  border-radius: 15px;
+  display: block;
+  margin: 15px auto;
+  padding: 15px 45px;
+  width: 100%;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: all 0.3s ease;
+}
+.form-structor .login .center .submit-btn:hover {
+  transition: all 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.form-structor .login.slide-up {
+  top: 90%;
+  -webkit-transition: all 0.3s ease;
+}
+.form-structor .login.slide-up .center {
+  top: 10%;
+  -webkit-transform: translate(-50%, 0%);
+  -webkit-transition: all 0.3s ease;
+}
+.form-structor .login.slide-up .form-holder, .form-structor .login.slide-up .submit-btn {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.3s ease;
+}
+.form-structor .login.slide-up .form-title {
+  font-size: 1em;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.form-structor .login.slide-up .form-title span {
+  margin-right: 5px;
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3s ease;
+}
+
+.courseRGL {
+  font-family: "Inter";
+  font-size: 20px;
+  padding: 10px 0 35px 30px;
+  color: #000000;
+}
+
+/* .courseContainer {
+  display: flex;
+  justify-content: space-between;
+} */
+
+.accordion {
+  margin-left: 15px;
+  background-color: #E1E8EE;
+}
+
+.accordion-wrapper{
+  max-height: 100vh;
+}
+
+.accordionH1 {
+  padding: 20px 15px 20px 15px;
+  background-color: #E1E8EE;
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  text-align: center;
+  outline: none;
+  transition: 0.4s;
+  font-family: "Inter";
+  font-size: 20px;
+  color: #000000;
+}
+
+.active, .accordionH1:hover {
+  background-color: rgb(107 114 128 / var(--tw-bg-opacity));
+}
+
+.accordionBody {
+  padding: 0 15px;
+  max-height: 0;
+  overflow: hidden;
+  text-align: center;
+  transition: 0.4s ease-out; 
+}
+
+.active .accordionBody{
+  padding: 0 15px;
+  max-height: 250px;
+  overflow: hidden;
+  text-align: center;
+  transition: max-height 0.4s ease-out;
+}
+
+.accordionLinks {
+  text-decoration: none;
+  font-family: "Inter";
+  color: #000000;
+  font-size: 18px;
+  transition: 0.4s;
+  display: block;
+  margin: 10px 0 10px 0;
+}
+
+.accordionLinks:hover {
+  color: #474747;
+}
+
+.courseTheme {
+
+  background-color: #E1E8EE;
+}
+
+.courseH1 {
+  font-family: "Inter";
+  font-size: 28px;
+  color: #000000;
+  margin: 20px 0 110px 20px;
+}
+
+.courseVideo {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 110px;
+  flex-wrap: wrap;
+}
+
+.courseText {
+  font-family: "Inter";
+  color: #000000;
+  font-size: 20px;
+  margin: 0 0 100px 30px;
+}
+
+.custom-scrollbar_dark::-webkit-scrollbar {
+  width: 10px;
+  /* --custom-scrollbar-background: #222;
+  --custom-scrollbar-thumb-color: #5e5e5e;
+  --custom-scrollbar-thumb-hover-color: #777;
+  --custom-scrollbar-thumb-active-color: #999; */
+}
+
+.custom-scrollbar_dark::-webkit-scrollbar-track {
+  background: #FFF9F0;
+}
+
+.custom-scrollbar_dark::-webkit-scrollbar-thumb{
+  background-color: #BFBCB7;
+  border-radius: 20px;
+  border: 1px solid #bac2c9;
+}
+
+.custom-scrollbar_dark::-webkit-scrollbar-thumb:hover{
+  
+}
