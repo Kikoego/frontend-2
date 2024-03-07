@@ -5,7 +5,7 @@ https://github.com/Rendant - бэкэнд
 https://github.com/nikisokay - фронтенд
 
 В данном репозитории копия ветки Фронтенда с пояснениями
-Ссылка для просмотра: https://frontend-git-dev-rgllearn.vercel.app/
+Ссылка для просмотра: http://217.71.129.139:4048/
 
 Документация:
 
