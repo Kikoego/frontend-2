@@ -1,4 +1,4 @@
-Проект с использованием Next JS, Tailwind, JS
+Проект с использованием Next JS, Tailwind
 
 Проект создан в команде:
 https://github.com/Rendant - бэкэнд
